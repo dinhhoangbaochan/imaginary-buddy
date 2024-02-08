@@ -1,0 +1,16 @@
+{
+    "name": "chandinh/be-buddy",
+    "autoload": {
+        "psr-4": {
+            "Chandinh\\BeBuddy\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Chan Dinh",
+            "email": "dinhhoangbaochan@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

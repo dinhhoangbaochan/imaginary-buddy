@@ -1,0 +1,10 @@
+<?php
+
+if ($argc < 2) {
+  echo "Usage: php magic [command]\n";
+  exit(1);
+}
+
+$command = $argv[1];
+
+var_dump($argv);
