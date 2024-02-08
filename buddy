@@ -1,5 +1,7 @@
 <?php
 
+require 'commands.php';
+
 if ($argc < 2) {
   echo "Usage: php magic [command]\n";
   exit(1);
