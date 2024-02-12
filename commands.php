@@ -36,10 +36,22 @@ class Console {
 
   public function handle_invalid_argument(int $total_argument, string $action)
   {
-    if ( $total_argument >= 2 && ! in_array( $action, $this->allowed_actions )  ) {
+    $main_action = $this->separate_action($action)[0];
+
+    if ( $total_argument >= 2 && ! in_array( $main_action, $this->allowed_actions )  ) {
       $this->write( "Invalid action!", "red" );
       $this->write( "Please check document again for allowed actions!", "yellow" );
     }
+  }
+
+  public function separate_action(string $action_combined)
+  {
+    $action_separated = explode( ":", $action_combined );
+
+    $main_action = $action_separated[0];
+    $sub_action = $action_separated[1];
+
+    return [$main_action, $sub_action];
   }
 
 }

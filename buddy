@@ -6,7 +6,8 @@ $console = new Console();
 
 $console->handle_min_argument( $argc );
 $console->handle_invalid_argument( $argc, $argv[1] );
+// $console->make($argv[1]);
 
 // $command = $argv[1];
 
-// var_dump($argc);
+var_dump(explode(":", $argv[1]));
