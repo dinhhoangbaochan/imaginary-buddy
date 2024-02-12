@@ -18,4 +18,18 @@ class Console {
     echo $this->styles[$color] . $message;
   }
 
+  /**
+   * Handle when arguments passed to terminal are not enough
+   * For example: `php buddy `
+   * 
+   * @param int $all_arguments All arguments passed from terminal
+   */
+  public function handle_min_argument(int $all_arguments)
+  {
+    if ( $all_arguments < 2 ) {
+      $this->write( "Two few arguments!", "red" );
+      exit(1);
+    }
+  }
+
 }

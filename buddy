@@ -4,11 +4,8 @@ require 'commands.php';
 
 $console = new Console();
 
-if ($argc < 2) {
-  $console->write("Hello", "red");
-  exit(1);
-}
+$console->handle_min_argument($argc);
 
-$command = $argv[1];
+// $command = $argv[1];
 
-var_dump($argv);
+var_dump($argc);
