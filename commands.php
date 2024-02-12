@@ -1,6 +1,8 @@
 <?php
 
-function handle_commands()
-{
+class Console {
   
+  function __construct() {
+
+  }
 }

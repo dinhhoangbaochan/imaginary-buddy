@@ -4,6 +4,7 @@ require 'commands.php';
 
 if ($argc < 2) {
   echo "Usage: php magic [command]\n";
+  echo "\033[1;31mBold and red text\033[0m\n";
   exit(1);
 }
 
