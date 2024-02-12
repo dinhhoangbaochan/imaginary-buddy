@@ -13,6 +13,8 @@ class Console {
     'bold'    => "\033[1m",
   ];
 
+  private $allowed_actions = ["help", "check", "make"];
+
   public function write( string $message, string $color )
   {
     echo $this->styles[$color] . $message;
@@ -22,13 +24,21 @@ class Console {
    * Handle when arguments passed to terminal are not enough
    * For example: `php buddy `
    * 
-   * @param int $all_arguments All arguments passed from terminal
+   * @param int $total_argument The total amount of arguments passed from terminal
    */
-  public function handle_min_argument(int $all_arguments)
+  public function handle_min_argument(int $total_argument)
   {
-    if ( $all_arguments < 2 ) {
+    if ( $total_argument < 2 ) {
       $this->write( "Two few arguments!", "red" );
       exit(1);
+    }
+  }
+
+  public function handle_invalid_argument(int $total_argument, string $action)
+  {
+    if ( $total_argument >= 2 && ! in_array( $action, $this->allowed_actions )  ) {
+      $this->write( "Invalid action!", "red" );
+      $this->write( "Please check document again for allowed actions!", "yellow" );
     }
   }
 
