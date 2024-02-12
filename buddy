@@ -2,9 +2,10 @@
 
 require 'commands.php';
 
+$console = new Console();
+
 if ($argc < 2) {
-  echo "Usage: php magic [command]\n";
-  echo "\033[1;31mBold and red text\033[0m\n";
+  $console->write("Hello", "red");
   exit(1);
 }
 
