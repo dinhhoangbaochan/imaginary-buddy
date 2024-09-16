@@ -2,11 +2,12 @@
 
 require 'commands.php';
 
-if ($argc < 2) {
-  echo "Usage: php magic [command]\n";
-  exit(1);
-}
+$console = new Console();
 
-$command = $argv[1];
+$console->handle_min_argument( $argc );
+$console->handle_invalid_argument( $argc, $argv[1] );
+// $console->make($argv[1]);
 
-var_dump($argv);
+// $command = $argv[1];
+
+var_dump(explode(":", $argv[1]));
